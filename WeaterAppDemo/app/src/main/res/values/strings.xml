@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Weather App</string>
+    <string name="label_add_note">Add Note</string>
+    <string name="search_hint">Search by city</string>
+    <string name="celsius">Celsius/metric</string>
+    <string name="fahrenheit">Fahrenheit/imperial</string>
+    <string name="location_reset">Location reset</string>
+    <string name="temp_wind">%s km/h</string>
+    <string name="wind">Wind</string>
+    <string name="humidity">Humidity</string>
+    <string name="data_not_found">Please add location on click bottom Pin Icon.</string>
+</resources>

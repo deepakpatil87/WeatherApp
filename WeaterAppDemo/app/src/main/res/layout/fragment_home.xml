@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="locationlistview"
+            type="com.hexaware.weatherapp.viewmodel.LocationViewModel" />
+
+    </data>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rounded_dashabord_white"
+            android:drawableRight="@drawable/search_icon"
+            android:drawablePadding="15dp"
+            android:ems="18"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="@string/search_hint"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#929292"
+            android:textSize="@dimen/thirty_four_px" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/deviceListRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/etSearch"
+            android:layout_marginTop="10dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/msglabel"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/data_not_found"
+        android:fontFamily="@font/roboto_light"
+        android:textColor="@android:color/white"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/push_pin"
+        app:layout_anchor="@id/mainLayout"
+        android:backgroundTint="@android:color/white"
+        app:layout_anchorGravity="bottom|right|end"
+        android:contentDescription="TODO" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

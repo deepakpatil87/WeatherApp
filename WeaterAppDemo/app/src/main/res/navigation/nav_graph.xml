@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.hexaware.weatherapp.ui.HomeFragment"
+        android:label="Home Fragment"
+        tools:layout="@layout/fragment_home">
+
+    </fragment>
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.hexaware.weatherapp.ui.HelpFragment"
+        android:label="Help Fragment"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.hexaware.weatherapp.ui.SettingsFragment"
+        android:label="Settings Fragment"
+        tools:layout="@layout/settings_fragment">
+        <argument
+            android:name="myArg"
+            android:defaultValue="1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/addlocationMap"
+        android:name="com.hexaware.weatherapp.ui.GetCityFragment"
+        android:label="Add Location"
+        tools:layout="@layout/activity_addlocation">
+
+    </fragment>
+    <fragment
+        android:id="@+id/cityWeatherDetail"
+        android:name="com.hexaware.weatherapp.ui.CityWeatherDetailsFragment"
+        android:label="Weather Details"
+        tools:layout="@layout/fragment_city_weather_detail">
+
+    </fragment>
+
+</navigation>

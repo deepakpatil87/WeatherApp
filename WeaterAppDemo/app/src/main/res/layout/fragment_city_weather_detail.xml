@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.text.Html" />
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="model"
+            type="com.hexaware.weatherapp.model.current.WeatherData" />
+
+    </data>
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/mainContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/addressContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp"
+
+                        tools:textt="DHAKA, BD" />
+
+                    <TextView
+                        android:id="@+id/updated_at"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+
+                        tools:text="20 April 2019, 20:08 PM" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/overviewContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/addressContainer"
+                    android:layout_centerInParent="false"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="@android:color/white"
+
+                        android:textSize="18sp"
+                        tools:text="Clear Sky" />
+
+                    <TextView
+                        android:id="@+id/txtTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-thin"
+                        android:textColor="@android:color/white"
+
+                        android:textSize="80sp"
+                        tools:text="29°C" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtTemp_min"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@android:color/white"
+                            tools:text="Min Temp: 05:05 AM" />
+
+                        <Space
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/txtTemp_max"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@android:color/white"
+                            tools:text="Max Temp: 05:05 PM" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/detailsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/overviewContainer"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="15dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="#3CF1EBF1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/wind"
+                                app:tint="@android:color/white" />
+
+                            <Space
+                                android:layout_width="wrap_content"
+                                android:layout_height="5dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="@string/wind"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/txtWind"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textColor="@android:color/white"
+
+                                android:textSize="14sp"
+                                tools:text="06:40 AM" />
+<!--                            android:text="@{model.wind.getSpeed()}"-->
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="#3CF1EBF1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/humidity"
+                                app:tint="@android:color/white" />
+
+                            <Space
+                                android:layout_width="wrap_content"
+                                android:layout_height="5dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:text="@string/humidity"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/txtHumidity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textColor="@android:color/white"
+                                android:text="@{model.main.getHumidityString()}"
+                                android:textSize="14sp"
+                                tools:text="06:40 AM" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerForecast"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/detailsContainer"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </RelativeLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Something went wrong"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+</layout>

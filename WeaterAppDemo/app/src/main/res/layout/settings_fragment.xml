@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:background="@drawable/bg_gradient"
+    android:orientation="vertical">
+    <!--    Temperature is available in Fahrenheit, Celsius and Kelvin units.-->
+
+    <!--    For temperature in Fahrenheit use units=imperial-->
+    <!--    For temperature in Celsius use units=metric-->
+    <!--    Temperature in Kelvin is used by default, no need to use units parameter in API call-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="15dp"
+        android:background="#3CF1EBF1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginLeft="10dp"
+            android:layout_weight=".5"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/celsius"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swiCelsius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight=".5"
+            android:gravity="center|start"
+
+            app:switchPadding="150dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:background="#3CF1EBF1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginLeft="10dp"
+            android:layout_weight=".5"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/fahrenheit"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swiFahrenheit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight=".5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:background="#3CF1EBF1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginLeft="10dp"
+            android:layout_weight=".5"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center|start"
+            android:text="@string/location_reset"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swiLocationReset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight=".5"
+            app:switchPadding="100dp" />
+    </LinearLayout>
+</LinearLayout>

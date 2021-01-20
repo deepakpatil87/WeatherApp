@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">10dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="cardCornerRadius">4dp</dimen>
+    <dimen name="cardElevation">4dp</dimen>
+    <dimen name="cardview_horizontal_padding">6dp</dimen>
+    <dimen name="cardview_vertical_padding">2dp</dimen>
+    <dimen name="app_bar_height">60dp</dimen>
+    <!--Floating action button-->
+    <dimen name="design_fab_image_size" tools:override="true">36dp</dimen>
+
+
+    <dimen name="fourty_four_px">15sp</dimen><!--44-->
+    <dimen name="thirty_four_px">12sp</dimen><!--34-->
+    <dimen name="thirty_six_px">13sp</dimen><!--36-->
+    <dimen name="fourty_px">14sp</dimen><!--40px-->
+    <dimen name="thirty_px">10sp</dimen><!--30px-->
+    <dimen name="fifty_four_px">15sp</dimen><!--54px-->
+    <dimen name="twenty_eight_px">14sp</dimen><!--28px-->
+    <dimen name="twenty_px">10sp</dimen><!--20px-->
+    <dimen name="twenty_two_px">11sp</dimen><!--22px-->
+    <dimen name="twenty_six_px">13sp</dimen><!--26px-->
+    <dimen name="sixty_px">20sp</dimen><!--60px-->
+
+</resources>

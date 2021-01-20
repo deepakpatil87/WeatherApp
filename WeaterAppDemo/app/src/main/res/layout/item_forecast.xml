@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.Html" />
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="model"
+            type="com.hexaware.weatherapp.model.forecast.ListW" />
+
+    </data>
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rootView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="130dp"
+            android:layout_height="190dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="1dp"
+            app:cardCornerRadius="14dp"
+            tools:backgroundTint="@android:color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+
+                <TextView
+                    android:id="@+id/textViewDayOfWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@{model.getDay()}"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="Monday" />
+
+
+                <TextView
+                    android:id="@+id/textViewTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-thin"
+                    android:gravity="center"
+                    android:text="@{model.main.getTempString()}"
+                    android:textColor="@android:color/white"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    tools:text="23°" />
+
+                <TextView
+                    android:id="@+id/textStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="@{model.weather.get(0).getDescriptionText()}"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+
+                    tools:text="Clear" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutTempMaxMin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewTemp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:transitionName="@{String.format(@string/tempMaxMin, model.getDay())}"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@{model.main.getTempMinString()}"
+                        android:textColor="@color/whiteWithHalfOpacity"
+                        android:textSize="14sp"
+                        tools:text="24°" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@{model.main.getTempMaxString()}"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        tools:text="56°" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearLayoutWind"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linearLayoutTempMaxMin"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:transitionName="@{String.format(@string/tempMaxMin, model.getDay())}"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@{model.main.getHumidityString()}"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        tools:text="24°" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@{model.wind.getSpeed()}"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        tools:text="56°" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>
